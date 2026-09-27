@@ -1,238 +1,259 @@
+# Campus Complaint Management System
 
-# 🎓 CCMS – Campus Complaint Management System  
-**Report it. Track it. Fix it. 🚀**
+This repository contains the current `develop` state of the Campus Complaint Management System (CCMS), a React, Node.js, Express, and MongoDB application for submitting, tracking, and administering campus complaints.
 
-![Status](https://img.shields.io/badge/Status-Live-success)
-![Build](https://img.shields.io/badge/Build-Stable-blue)
-![License](https://img.shields.io/badge/License-Academic-orange)
-![Made With](https://img.shields.io/badge/Made%20with-React%20%7C%20Node.js%20%7C%20MongoDB-informational)
-![Deployment](https://img.shields.io/badge/Deployment-Vercel%20%7C%20Render-purple)
+## Fork Context
 
-A modern **full-stack web application** for managing campus facility complaints with **real-time tracking, analytics, and automated workflows**.
+This repository is a fork of the original CCMS team project:
 
-🟢 **All modules are live, stable, and deployed in production**
+- Original repository: [HarshitPandey-2021/Campus-Complaint-Management-System](https://github.com/HarshitPandey-2021/Campus-Complaint-Management-System)
+- Fork: [Shiva-Singh09/Campus-Complaint-Management-System](https://github.com/Shiva-Singh09/Campus-Complaint-Management-System)
+- Verifiable base state: the fork's `develop` history currently ends at merge commit `f94fbf5`, which merged the `shakti-student-ui` work after the Shiva backend merge.
 
----
+The original repository URL is supported by the merge history and the previous project documentation. The exact fork creation event is not separately recorded in the available Git metadata, so the base state is described only to the extent that it can be verified.
 
-## 🌐 Live Application
+This fork is intended for an independent technical review of the original project, identification of engineering gaps, bug and architecture analysis, documentation of improvement opportunities, and subsequent independent improvements.
 
-| Service | URL | Status |
-|------|-----|------|
-| 🏠 Landing Page | https://ccms-home.vercel.app | ✅ Live |
-| 👨‍💼 Admin Dashboard | https://ccms-admin-rho.vercel.app | ✅ Live |
-| 📚 Student Portal | https://ccms-student.vercel.app | ✅ Live |
-| ⚙️ Backend API | https://campus-backend-rq7f.onrender.com | ✅ Live |
+## Original Team
 
-👉 **Start Here:** [Landing Page](https://ccms-home.vercel.app)
+The following descriptions combine repository history, merge metadata, existing project attribution, and the code present at the released `develop` tip. They are neutral scope descriptions, not rankings.
 
----
+### Harshit Pandey
 
-## 👥 Team
+- Major frontend and product implementation
+- Admin dashboard UI and integration work
+- Student portal scaffolding and project structure
+- Documentation and integration/merge coordination
+- Admin activity-log, complaints-table, and responsive UI work visible in history
 
-| Member | Responsibility | Status |
-|------|------|------|
-| Harshit | Admin Dashboard & Integration | ✅ Complete |
-| Shakti | Landing Page & UI Design | ✅ Complete |
-| Somesh | Backend API & Database | ✅ Complete |
-| Shiva | Database Design & Testing | ✅ Complete |
+### Shakti / Sishan24
 
----
+- Frontend development
+- Landing page work
+- Login and signup UI
+- Student-facing frontend changes
 
-## 📦 Project Modules
+The Git author identity used for this work is `Sishan24`; the relationship to the name Shakti is based on the project's existing team attribution.
 
-### 🏠 Landing Page  
-![React](https://img.shields.io/badge/React-18-blue)
-![Tailwind](https://img.shields.io/badge/TailwindCSS-Yes-38bdf8)
+### Shiva Singh / Shiva-Singh09
 
-**Purpose:** Central entry point for all users.
+- Core Node.js and Express backend
+- REST API implementation
+- MongoDB integration using the official MongoDB driver
+- Database connection, indexes, and ObjectId handling
+- JWT authentication, bcrypt password hashing, and role authorization
+- Complaint-management business logic and complaint APIs
+- Analytics APIs and admin-backend integration
+- Admin complaint-management components and live frontend API communication
+- Integration and merge contribution where recorded in Git history
 
-**Key Features**
-- Role-based authentication  
-- University-branded UI  
-- Fully responsive design  
-- Smooth animations  
+### Somesh Pandey
 
----
+The existing project attribution identifies Somesh with backend-related development, including password and forgot-password work and backend consolidation. The available history in this fork does not contain a matching `Somesh` author identity or a separately preserved branch, so those specific contributions cannot be independently verified from Git metadata in this copy.
 
-### 🎛️ Admin Dashboard  
-![Analytics](https://img.shields.io/badge/Analytics-Enabled-green)
-![Dark Mode](https://img.shields.io/badge/Dark%20Mode-Supported-black)
+## My Contribution to the Original Project
 
-**Purpose:** Complete control panel for complaint monitoring and resolution.
+I was also a member of the original CCMS team. I owned the core backend, data and security layer, complaint-management APIs, and frontend-backend integration of the original project. The verified scope includes:
 
-**Key Features**
-- Real-time complaint statistics  
-- Status updates & management  
-- Interactive charts (Recharts)  
-- CSV export & printable reports  
-- Notification system  
+- Core Node.js/Express backend and REST APIs
+- MongoDB persistence through the official `mongodb` driver, including connection setup and indexes
+- ObjectId validation and handling
+- JWT authentication, bcrypt password hashing, and role-based authorization
+- Complaint-management business logic and analytics endpoints
+- Admin API integration
+- Replacement of admin mock-data paths with Axios-based live API calls
+- The current admin complaint-table component system and small admin defect fixes
+- Integration and merge work where recorded in the project history
 
----
+This does not mean that I built the entire CCMS or the entire admin dashboard. The released `develop` state contains work from all contributors described above.
 
-### 📱 Student Portal  
-![Uploads](https://img.shields.io/badge/File%20Uploads-Images%20%7C%20PDFs-blue)
-![Mobile](https://img.shields.io/badge/Mobile-Responsive-success)
+### Released Versus Branch-Only Work
 
-**Purpose:** Easy complaint submission & tracking for students.
+The contribution statements above refer to work present in the current `develop` tree or supported by its merge history. No separate later modular-backend restructuring or backend README is represented as part of this released `develop` tip. Any such later work outside this tip is branch-only and is not treated as part of the released project in this audit.
 
-**Key Features**
-- Submit complaints with attachments  
-- Track real-time status updates  
-- View complaint history  
-- Mobile-first experience  
+## Current Architecture
 
----
+The repository currently contains three frontend applications and a backend:
 
-### ⚙️ Backend API  
-![JWT](https://img.shields.io/badge/Auth-JWT-yellow)
-![Cloudinary](https://img.shields.io/badge/Storage-Cloudinary-blue)
+- `frontend/student-ui`: landing and entry experience
+- `user-portal`: student complaint experience
+- `admin`: administration dashboard, complaint management, activity UI, and analytics views
+- `backend`: Express API, JWT middleware, controllers, routes, and MongoDB access
 
-**Purpose:** Secure and scalable backend services.
+The intended request flow is:
 
-**Key Features**
-- RESTful APIs  
-- JWT-based authentication  
-- Role-based access control  
-- Cloudinary file storage  
-- Analytics & reporting endpoints  
-
----
-
-## 🚀 Quick Start
-
-```bash
-# Clone the repository
-git clone https://github.com/HarshitPandey-2021/Campus-Complaint-Management-System
-cd Campus-Complaint-Management-System
-````
-
-### Backend
-
-```bash
-cd backend
-npm install
-npm run dev
+```text
+Client -> frontend application -> Express API -> authentication middleware
+       -> controller/business logic -> MongoDB -> HTTP response
 ```
 
-### Admin Dashboard
+The backend uses the official MongoDB driver for persistence. The current tree also contains more than one backend entry path (`app.js` and `index.js`), which should be consolidated before production operation. Controllers currently combine request validation, business logic, database access, and response formatting.
 
-```bash
-cd admin
-npm install
-npm run dev
+## Independent Technical Review
+
+Review performed on **2026-09-27** after forking the project. This section records the current implementation as observed in the repository; no application source code was changed for this review.
+
+### Confirmed Issues
+
+- Admin complaint routes do not enforce authentication or role authorization. The relevant middleware calls are commented out for listing complaints, reading a complaint, updating status, marking a complaint read, and analytics.
+- User registration accepts the `role` supplied by the request body. Without a server-side restriction to permitted registration roles, a caller can request an administrative role.
+- The admin service sends `page` and `limit`, but the backend complaint-list controller ignores them and returns the complete collection. Client-side filtering and sorting therefore operate on an unbounded response.
+- The analytics endpoint performs several independent `countDocuments` queries and loads every resolved complaint into memory to calculate average resolution time. The admin analytics page also triggers several full complaint-list requests in parallel.
+- The admin frontend hard-codes `http://localhost:4000/api/complaints`, while the project documentation describes a deployed backend URL. This makes the admin integration environment-specific unless the source is changed or proxied.
+- The repository contains two different backend startup implementations with different route shapes and ports. The backend package has no development or start script, increasing the risk of running an unintended API surface.
+- Complaint status updates accept arbitrary status strings and do not clear `resolvedAt` when a resolved complaint is moved back to another status. The update checks also use truthiness, so empty remarks or assignments cannot be intentionally cleared.
+- The analytics error response includes the raw caught error object, which can expose implementation details to clients.
+- The admin logs route and controller are present but contain no registered routes or exported behavior, so that backend capability is incomplete in the current tree.
+
+### Improvement Opportunities
+
+- Introduce a service layer so controllers focus on transport concerns and database operations are reusable and testable.
+- Define consistent request schemas, permitted enum values, response shapes, and error codes across all endpoints.
+- Make pagination, filtering, sorting, and projections explicit API contracts rather than client-side assumptions.
+- Consolidate the backend entry point and provide documented development, test, and production commands.
+- Add integration tests for authorization, ownership checks, complaint transitions, analytics, and error responses.
+- Add structured logging, request correlation, monitoring, and a controlled environment configuration strategy.
+- Restrict CORS to known application origins and add security headers in production.
+
+### Future Improvements
+
+- Add centralized rate limiting for authentication and abuse-prone endpoints.
+- Add a deliberate notification delivery model if real-time updates are required.
+- Add background processing for expensive reporting or notification work when usage justifies it.
+- Add CI checks for linting, tests, API contracts, and deployment readiness.
+
+## Bugs / Defects Identified
+
+### Admin mutation and analytics endpoints are publicly reachable
+
+**Observed behavior:** The admin complaint routes are registered without `verifyToken` and `authorizeRoles("admin")`.
+
+**Root cause:** The protected route definitions are commented out in `backend/src/routes/complaints.js`.
+
+**Impact:** Requests can reach administrative reads and mutations without the intended authentication and authorization boundary.
+
+**Current status:** Identified and documented; source-code fix planned for a subsequent branch.
+
+### Admin pagination contract is not implemented by the backend
+
+**Observed behavior:** The admin client sends `page` and `limit`, but the controller returns all complaints and the client treats the response as an array.
+
+**Root cause:** The backend controller has no pagination, skip/limit, or pagination metadata.
+
+**Impact:** Response size and client memory/processing grow with the complaint collection.
+
+**Current status:** Identified and documented; source-code fix planned for a subsequent branch.
+
+### Registration permits a caller-selected role
+
+**Observed behavior:** Registration copies `role` from the request body into the user document and JWT.
+
+**Root cause:** There is no server-side policy restricting public registration to the student role.
+
+**Impact:** A caller may obtain a role with administrative privileges if the route is reachable and the role is accepted by the rest of the system.
+
+**Current status:** Identified and documented; source-code fix planned for a subsequent branch.
+
+## Security Review
+
+### Confirmed security findings
+
+- JWT verification and role middleware exist and student complaint routes use them, but the current admin complaint routes bypass both checks.
+- Complaint detail ownership is checked for the student path in the controller, but the admin path is currently unauthenticated at the route boundary.
+- Passwords are hashed with bcrypt before persistence and are omitted from the login response.
+- Public registration accepts a caller-provided role and should be restricted server-side.
+- CORS is enabled for all origins with `cors()` and no visible allowlist.
+
+### Security improvement opportunities
+
+- Add rate limiting and account-abuse controls for login and registration.
+- Validate all request bodies with explicit schemas and permitted values.
+- Use security headers, restricted CORS, secret rotation, and production token storage/refresh policies.
+- Avoid returning raw errors and ensure uploaded content is validated and stored safely if file upload is enabled.
+
+## Performance & Scalability Review
+
+### Confirmed performance problems
+
+- Complaint listing is unpaginated despite pagination parameters in the client.
+- Analytics uses multiple count queries plus an unbounded read of resolved complaints.
+- The analytics page repeats full complaint-list requests for category, status, trend, average time, and fallback statistics.
+- Client-side search, filtering, sorting, and aggregation require the full complaint dataset.
+
+### Potential scalability improvements
+
+- Preserve and extend the existing complaint indexes for the actual filter and sort patterns, then verify them with query plans.
+- Replace repeated analytics reads with targeted aggregation pipelines or a materialized statistics strategy.
+- Return only fields needed by each view and add server-side filtering and sorting.
+- Cache short-lived dashboard and analytics results after correctness and invalidation rules are defined.
+
+## Redis & Caching Review
+
+Redis is identified as a future scalability and caching improvement and is **not implemented in this review branch**.
+
+Potential uses include:
+
+- Dashboard statistics with a short TTL
+- Expensive analytics aggregation results with a short TTL
+- Short-lived notification state or pub/sub if real-time notifications are introduced
+- A centralized rate-limit store when the API runs on multiple instances
+
+Redis is not required for the current JWT model. JWT validation is stateless; Redis would become useful only if token revocation, session coordination, distributed rate limiting, or shared short-lived state is required.
+
+Cache invalidation should follow complaint events. A complaint created should invalidate dashboard and relevant analytics keys. A status update should invalidate status/count and analytics keys. TTLs and explicit invalidation should be chosen together so stale statistics are bounded and predictable.
+
+## Improvement Roadmap
+
+### Phase 1 - Correctness
+
+- Restore admin authentication and authorization
+- Restrict registration roles
+- Add request validation and consistent status/error responses
+- Implement the pagination contract
+- Correct complaint transition and analytics edge cases
+
+### Phase 2 - Architecture
+
+- Consolidate backend entry points
+- Separate routes, controllers, services, and data access
+- Create reusable authentication and validation middleware
+- Complete or remove unfinished admin-log integration
+
+### Phase 3 - Performance
+
+- Add server-side pagination, filtering, sorting, and projections
+- Optimize analytics with aggregation and measured indexes
+- Cache dashboard and analytics responses where justified
+- Introduce Redis only for a demonstrated distributed-state or caching need
+
+### Phase 4 - Security
+
+- Add rate limiting and abuse controls
+- Strengthen authorization coverage and ownership tests
+- Add security headers, CORS policy, and input sanitization
+- Define a production token and secret-management strategy
+
+### Phase 5 - Production Readiness
+
+- Add automated unit and integration tests
+- Add structured logs, monitoring, and alerting
+- Add CI/CD checks and deployment configuration
+- Document environment management without exposing secrets
+
+## Local Structure
+
+```text
+admin/                 React admin dashboard
+backend/               Express and MongoDB API
+frontend/student-ui/   Landing and entry frontend
+user-portal/           Student portal
+docs/                  Project documentation and screenshots
 ```
 
-### Student Portal
+## Environment Variables
 
-```bash
-cd user-portal
-npm install
-npm run dev
-```
+The backend expects environment variables such as `MONGODB_URI`, `DB_NAME`, `JWT_SECRET`, and optionally `JWT_EXPIRES_IN` and `SALT_ROUNDS`. Keep secrets in local environment configuration and never commit their values.
 
-### Landing Page
+## Review Scope
 
-```bash
-cd frontend/student-ui
-npm install
-npm run dev
-```
-
----
-
-## 🔧 Tech Stack
-
-| Layer      | Technology                   |
-| ---------- | ---------------------------- |
-| Frontend   | React 18, Vite, Tailwind CSS |
-| Backend    | Node.js, Express.js, JWT     |
-| Database   | MongoDB Atlas                |
-| Storage    | Cloudinary                   |
-| Deployment | Vercel, Render               |
-
----
-
-## 📝 Environment Variables
-
-### Frontend
-
-```env
-VITE_API_URL=https://campus-backend-rq7f.onrender.com/api
-VITE_ADMIN_APP_URL=https://ccms-admin-rho.vercel.app
-VITE_USER_APP_URL=https://ccms-student.vercel.app
-```
-
-### Backend
-
-```env
-MONGODB_URI=your-mongodb-connection-string
-JWT_SECRET=your-jwt-secret
-CLOUDINARY_CLOUD_NAME=your-cloud-name
-CLOUDINARY_API_KEY=your-api-key
-CLOUDINARY_API_SECRET=your-api-secret
-```
-
----
-
-## 🌳 Git Workflow
-
-* **main** → Production (protected 🔒)
-* **develop** → Integration & testing
-* **feature/*** → Feature development
-
-**Commit Convention**
-
-* `feat:` Feature
-* `fix:` Bug
-* `docs:` Documentation
-* `style:` UI updates
-
----
-
-## 🔌 API Endpoints
-
-```http
-POST   /api/auth/login
-POST   /api/auth/register
-GET    /api/complaints
-POST   /api/complaints
-GET    /api/complaints/:id
-PUT    /api/admin/complaints/:id/status
-GET    /api/complaints/admin/analytics
-```
-
----
-
-## 🎯 Features Delivered
-
-* ✅ Role-based authentication
-* ✅ Real-time complaint tracking
-* ✅ Admin analytics dashboard
-* ✅ File uploads (Images & PDFs)
-* ✅ Dark / Light mode
-* ✅ CSV export & printable reports
-* ✅ Mobile-responsive UI
-* ✅ Production deployment
-
----
-
-## 📞 Support & Ownership
-
-* **Admin Dashboard:** Harshit
-* **Landing Page:** Shakti
-* **Backend API:** Somesh
-* **Database:** Shiva
-
----
-
-## 📝 License
-
-**Academic Project**
-University of Lucknow | 2025
-
-Built with ❤️ by **Team CCMS**
-
-*Last Updated: January 2026*
-*Default Branch: `develop`*
-
-
+This commit documents the initial independent audit only. It intentionally does not modify application source code, `package.json`, database code, configuration or environment files, other documentation, or Redis. Source-code fixes will be handled in subsequent branches after this review.
